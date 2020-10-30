@@ -1,16 +1,33 @@
 {
-  "name": "active-class-name",
+  "name": "internetools",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 4040",
     "build": "next build",
     "start": "next start"
   },
-  "author": "Remy Sharp <remy@leftlogic.com>",
+  "author": "M Salauddin Morshed <morshedx@gmail.com>",
   "dependencies": {
+    "axios": "^0.21.0",
+    "google-map-react": "^2.1.8",
     "next": "latest",
+    "next-compose-plugins": "^2.2.0",
+    "next-images": "^1.6.2",
+    "nprogress": "^0.2.0",
+    "public-ip": "^4.0.2",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "swr": "^0.3.7",
+    "theme-ui": "^0.3.1"
   },
-  "license": "MIT"
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  }
 }
