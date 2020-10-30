@@ -45,6 +45,7 @@ const styles = {
   },
   logo: {
     color: 'heading',
+    cursor: 'pointer',
     fontWeight: 700,
     textDecoration: 'none',
   },

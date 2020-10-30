@@ -43,5 +43,8 @@ const styles = {
       width: 'auto',
       flexGrow: 1,
     },
+    button: {
+      ml: 3,
+    },
   },
 };

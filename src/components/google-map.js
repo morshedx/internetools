@@ -42,7 +42,7 @@ export default GoogleMap;
 const styles = {
   mapCanvas: {
     width: '100%',
-    height: 600,
+    height: 350,
     position: 'relative',
     marginLeft: 'auto',
   },

@@ -1,95 +1,40 @@
 /** @jsx jsx */
-import { jsx, Box, Heading } from 'theme-ui';
-import IpSearchForm from 'components/ip-search-form';
 import { useContext } from 'react';
+import { jsx, Box } from 'theme-ui';
+import { Tabs } from '@bumaga/tabs';
 import { IpContext } from 'context/ip-context';
+import Location from 'components/ip-info/location';
+import Asn from 'components/ip-info/asn';
+import Currency from 'components/ip-info/currency';
+import TimeZone from 'components/ip-info/time-zone';
+import { Tab, Panel } from 'components/tab';
 
 const InfoTable = () => {
   const { data } = useContext(IpContext);
 
   return (
     <Box sx={styles.infoTable}>
-      <div sx={{ gridColumn: '1/5' }}>
-        <IpSearchForm />
-      </div>
-      <div sx={styles.card}>
-        <Heading as="h3">Location</Heading>
-        <Box as="ul">
-          <li>
-            <span>City :</span> <span>{data?.ipData?.city}</span>
-          </li>
-          <li>
-            <span>Country :</span>{' '}
-            <span>
-              {data?.ipData?.emoji_flag} {data?.ipData?.country_name}
-            </span>
-          </li>
-          {/* <li>
-            <span>Languages :</span>{' '}
-            <span>
-              {data?.ipData?.languages?.map((lang, i) => (
-                <span key={i}>
-                  {lang.name}/{lang.native},{' '}
-                </span>
-              ))}
-            </span>
-          </li> */}
-          <li>
-            <span>Postal Code :</span> <span>{data?.ipData?.postal}</span>
-          </li>
-          <li>
-            <span>Dialing Code :</span>{' '}
-            <span>{data?.ipData?.calling_code}</span>
-          </li>
-        </Box>
-      </div>
-      <div sx={styles.card}>
-        <Heading as="h3">ASN</Heading>
-        <Box as="ul">
-          <li>
-            <span>IP :</span> <span>{data?.ipData?.ip}</span>
-          </li>
-          <li>
-            <span>ASN :</span> <span>{data?.ipData?.asn?.asn}</span>
-          </li>
-          <li>
-            <span>Domain :</span> <span>{data?.ipData?.asn?.domain}</span>
-          </li>
-          <li>
-            <span>Name :</span> <span>{data?.ipData?.asn?.name}</span>
-          </li>
-        </Box>
-      </div>
-      <div sx={styles.card}>
-        <Heading as="h3">Currency</Heading>
-        <Box as="ul">
-          <li>
-            <span>Currency Name :</span>{' '}
-            <span>{data?.ipData?.currency?.name}</span>
-          </li>
-          <li>
-            <span>Currency Symbol :</span>{' '}
-            <span>{data?.ipData?.currency?.symbol}</span>
-          </li>
-          <li>
-            <span>Currency Symbol Native :</span>{' '}
-            <span>{data?.ipData?.currency?.native}</span>
-          </li>
-        </Box>
-      </div>
-      <div sx={styles.card}>
-        <Heading as="h3">Time Zone</Heading>
-        <Box as="ul">
-          <li>
-            <span>Current Time :</span>{' '}
-            <span>{data?.ipData?.time_zone?.current_time}</span>
-          </li>
-          <li>
-            <span>Time Zone :</span>{' '}
-            <span>{data?.ipData?.time_zone?.name}</span>
-          </li>
-        </Box>
-      </div>
+      <Tabs>
+        <div sx={styles.tabButtons}>
+          <Tab>Location</Tab>
+          <Tab>ASN</Tab>
+          <Tab>Currency</Tab>
+          <Tab>Time Zone</Tab>
+        </div>
+
+        <Panel>
+          <Location sx={styles.card} data={data} />
+        </Panel>
+        <Panel>
+          <Asn sx={styles.card} data={data} />
+        </Panel>
+        <Panel>
+          <Currency sx={styles.card} data={data} />
+        </Panel>
+        <Panel>
+          <TimeZone sx={styles.card} data={data} />
+        </Panel>
+      </Tabs>
     </Box>
   );
 };
@@ -98,24 +43,39 @@ export default InfoTable;
 
 const styles = {
   infoTable: {
-    gap: '30px 50px',
-    display: 'grid',
-    gridTemplateColumns: 'repeat(4,1fr)',
-    marginBottom: 7,
+    // gap: 6,
+    // display: 'grid',
+    // gridTemplateColumns: 'repeat(2,1fr)',
+    // marginBottom: 7,
+    boxShadow: '0px 16px 40px rgba(72, 59, 26, 0.08)',
+    backgroundColor: '#fff',
+    borderRadius: 5,
   },
-  card: {
-    h3: {
-      mb: 3,
+  tabButtons: {
+    backgroundColor: 'white',
+    borderBottom: (t) => `5px solid ${t.colors.primary}`,
+    padding: '10px 30px 0',
+    gridColumn: '1/3',
+    display: 'grid',
+    gap: 2,
+    gridTemplateColumns: 'repeat(4, 1fr)',
+    button: {
+      backgroundColor: 'white',
+      border: 0,
+      borderRadius: '4px 4px 0 0',
+      color: 'text',
+      cursor: 'pointer',
+      fontFamily: 'body',
+      fontSize: 3,
+      minHeight: 45,
+      padding: '0 25px',
+      mr: 3,
+      outline: 0,
+      fontWeight: 400,
     },
-    ul: {
-      listStyle: 'none',
-      padding: 0,
-    },
-    li: {
-      py: 2,
-      '+ li': {
-        borderTop: (t) => `1px solid ${t.colors.borderColor}`,
-      },
+    '.active': {
+      backgroundColor: 'primary',
+      color: 'white',
     },
   },
 };
