@@ -7,7 +7,7 @@ const Nav = () => {
   return (
     <nav sx={styles.nav}>
       <Link href="/">
-        <a sx={styles.logo}>internetTools.dev</a>
+        <a sx={styles.logo}>internetools.dev</a>
       </Link>
       <ul sx={styles.navbar}>
         <li>
@@ -57,6 +57,9 @@ const styles = {
     cursor: 'pointer',
     fontWeight: 700,
     textDecoration: 'none',
+    border: (t) => `3px solid ${t.colors.heading}`,
+    padding: '5px 8px',
+    borderRadius: 2,
   },
   navbar: {
     alignItems: 'center',
