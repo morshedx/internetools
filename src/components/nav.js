@@ -16,11 +16,20 @@ const Nav = () => {
           </ActiveLink>
         </li>
         <li>
+          <a
+            className="nav-link"
+            href="https://bin-checker.vercel.app/"
+            target="_blank"
+          >
+            Bin Checker
+          </a>
+        </li>
+        {/* <li>
           <ActiveLink activeClassName="active" href="/ip-info">
             <a className="nav-link">Ip Info</a>
           </ActiveLink>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <ActiveLink
             activeClassName="active"
             href="/[slug]"
@@ -28,7 +37,7 @@ const Nav = () => {
           >
             <a className="nav-link">Dynamic Route</a>
           </ActiveLink>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
