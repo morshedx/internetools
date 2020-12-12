@@ -11,18 +11,14 @@
   "dependencies": {
     "@bumaga/tabs": "^0.2.0",
     "axios": "^0.21.0",
-    "dayjs": "^1.9.6",
-    "google-map-react": "^2.1.8",
-    "luxon": "^1.25.0",
-    "next": "latest",
-    "next-compose-plugins": "^2.2.0",
+    "google-map-react": "^2.1.9",
+    "next": "^10.0.3",
+    "next-compose-plugins": "^2.2.1",
     "next-images": "^1.6.2",
     "nprogress": "^0.2.0",
-    "public-ip": "^4.0.2",
     "react": "^16.14.0",
     "react-dom": "^16.7.0",
-    "swr": "^0.3.7",
-    "theme-ui": "^0.3.1"
+    "theme-ui": "^0.3.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

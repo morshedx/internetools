@@ -1,12 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui';
 import styles from './card.styles';
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
-import timezone from 'dayjs/plugin/timezone';
-
-dayjs.extend(utc);
-dayjs.extend(timezone);
 
 const Location = ({ data }) => {
   const date = data?.ipData?.time_zone?.current_time;
