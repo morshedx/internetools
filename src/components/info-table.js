@@ -3,10 +3,10 @@ import { useContext } from 'react';
 import { jsx, Box } from 'theme-ui';
 import { Tabs } from '@bumaga/tabs';
 import { IpContext } from 'context/ip-context';
-import Location from 'components/ip-info/location';
-import Asn from 'components/ip-info/asn';
-import Currency from 'components/ip-info/currency';
-import TimeZone from 'components/ip-info/time-zone';
+import Location from 'components/pages/ip-info/location';
+import Asn from 'components/pages/ip-info/asn';
+import Currency from 'components/pages/ip-info/currency';
+import TimeZone from 'components/pages/ip-info/time-zone';
 import { Tab, Panel } from 'components/tab';
 
 const InfoTable = () => {
@@ -69,7 +69,6 @@ const styles = {
       fontSize: 3,
       minHeight: 45,
       padding: '0 25px',
-      mr: 3,
       outline: 0,
       fontWeight: 400,
     },

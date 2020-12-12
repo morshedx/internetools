@@ -27,8 +27,8 @@ export default {
     },
   },
   fonts: {
-    body: 'DM Sans, sans-serif',
-    heading: 'DM Sans, sans-serif',
+    body: 'Metropolis Regular',
+    heading: 'Metropolis Medium',
     monospace: 'Menlo, monospace',
   },
   fontSizes: [
@@ -49,7 +49,7 @@ export default {
     64, // 14
   ],
   fontWeights: {
-    body: 'normal',
+    body: 400,
     heading: 500,
     bold: 700,
   },
@@ -138,6 +138,7 @@ export default {
       fontWeight: 'bold',
     },
     input: {
+      fontFamily: 'body',
       borderRadius: 8,
       borderColor: 'borderColor',
       minHeight: 50,

@@ -7,15 +7,17 @@ export const IpContext = createContext();
 export const IpProvider = (props) => {
   const [currentIp, setCurrentIp] = useState('');
   const url = `https://api.ipdata.co/${currentIp}/?api-key=${process.env.NEXT_PUBLIC_IPDATA_API_KEY}`;
-
   const { data, setData } = useRequest(url);
 
   const getClientIp = async () => {
     try {
-      const response = await axios.get('https://api.ipify.org?format=json');
+      const response = await axios.get(
+        `http://ipinfo.io/json?token=${process.env.NEXT_PUBLIC_IPINFO_TOKEN}`
+      );
+      console.log(response);
       setCurrentIp(response.data.ip);
-    } catch (error) {
-      console.error(error);
+    } catch (e) {
+      console.error(e.response);
     }
   };
   useEffect(() => {

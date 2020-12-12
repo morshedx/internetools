@@ -8,16 +8,9 @@ export default class extends Document {
   }
 
   render() {
-    // Replace html lang attribute value with your language.
     return (
       <Html lang="en">
-        <Head>
-          <link
-            href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap"
-            rel="stylesheet"
-            crossOrigin="anonymous"
-          />
-        </Head>
+        <Head />
         <body>
           <InitializeColorMode />
           <Main />

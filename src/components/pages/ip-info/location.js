@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Heading } from 'theme-ui';
+import { jsx, Box } from 'theme-ui';
 import styles from './card.styles';
 
 const Location = ({ data }) => {

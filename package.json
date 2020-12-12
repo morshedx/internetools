@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next -p 4040",
+    "dev": "next dev -p 4040",
     "build": "next build",
     "start": "next start"
   },
@@ -11,7 +11,9 @@
   "dependencies": {
     "@bumaga/tabs": "^0.2.0",
     "axios": "^0.21.0",
+    "dayjs": "^1.9.6",
     "google-map-react": "^2.1.8",
+    "luxon": "^1.25.0",
     "next": "latest",
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.6.2",

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Input, Button, Label } from 'theme-ui';
+import { jsx, Input, Button, Label } from 'theme-ui';
 import { useState, useEffect, useContext } from 'react';
 import { IpContext } from 'context/ip-context';
 
@@ -15,8 +15,7 @@ const IpSearchForm = () => {
     setIpInput(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    // e.preventDefault();
+  const handleSubmit = () => {
     setCurrentIp(ipInput);
   };
 
@@ -40,8 +39,10 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     input: {
+      borderColor: '#e3e3e3',
       width: 'auto',
       flexGrow: 1,
+      fontSize: [7],
     },
     button: {
       ml: 3,
